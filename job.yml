@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: system-health-job
+spec:
+  template:
+    spec: 
+      containers:
+      - name: health-con
+        image: ziadelmelegy/system-health-report:1.0
+      restartPolicy: Never
+  backoffLimit: 2
